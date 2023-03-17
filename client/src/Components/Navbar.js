@@ -6,6 +6,7 @@ import img1 from "../Images/EmpowerHer.jpg";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const Navbar = () => {
+    const [loginStatus, setloginStatus] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div>
@@ -24,6 +25,14 @@ const Navbar = () => {
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
+                                    <Link to="/about">
+                                        <a
+                                            href="#"
+                                            className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-semibold"
+                                        >
+                                            About
+                                        </a>
+                                    </Link>
                                     <Link to="/explore">
                                         <a
                                             href="#"
@@ -40,11 +49,20 @@ const Navbar = () => {
                                             MyWork
                                         </a>
                                     </Link>
-                                    <Link to="/login">
-                                        <button class=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
-                                            Log In
-                                        </button>
-                                    </Link>
+                                    {!loginStatus &&
+                                        <Link to="/login">
+                                            <button class=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
+                                                Log In
+                                            </button>
+                                        </Link>
+                                    }
+                                    {loginStatus &&
+                                        <Link to="/">
+                                            <button class=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
+                                                Log Out
+                                            </button>
+                                        </Link>
+                                    }
                                 </div>
                             </div>
                         </div>

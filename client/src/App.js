@@ -5,6 +5,8 @@ import Dashboard from './Pages/Dashboard';
 import Home from './Pages/Home';
 import Navbar from './Components/Navbar';
 import Explore from './Pages/Explore';
+import About from './Pages/About';
+
 function App() {
 
   return (<Router>
@@ -16,6 +18,7 @@ function App() {
         <Route exact path='/register' element={< Register />}></Route>
         <Route exact path='/dashboard' element={< Dashboard />}></Route>
         <Route exact path='/explore' element={< Explore />}></Route>
+        <Route exact path='/about' element={< About />}></Route>
       </Routes>
     </div >
   </Router >
