@@ -79,7 +79,7 @@ const Login = () => {
                         <label htmlFor='password' className='mr-2'>Password :</label>
                         <input type="text" className="rounded-xl box-border h-11 w-150 pl-2 mt-2" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
-                    <button type="submit" className="h-12 px-6 mt-3 text-lg bg-sky-500 rounded-lg hover:bg-sky-700" onClick={login}>Login</button>
+                    <button type="submit" className="h-12 px-6 mt-3 text-lg bg-black text-white rounded-lg hover:bg-sky-700 font-bold" onClick={login}>Login</button>
                 </form>
 
                 <p className="text-2xl text-black-600 font-bold mt-6">{loginMessage}</p>

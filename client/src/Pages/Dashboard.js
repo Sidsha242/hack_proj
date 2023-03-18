@@ -14,7 +14,7 @@ const DashBoard = () => {
     useEffect(() => {
         console.log("Dash");
         const items = JSON.parse(localStorage.getItem('user'));
-        if (items.result === null) {
+        if (items === null) {
             setUsername(null);
         }
         else {

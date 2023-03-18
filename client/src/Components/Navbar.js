@@ -125,40 +125,44 @@ const Navbar = () => {
                     {(ref) => (
                         <div className="md:hidden" id="mobile-menu">
                             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                                <a
-                                    href="#"
-                                    className="text-black hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-                                >
-                                    Dashboard
-                                </a>
-
-                                <a
-                                    href="#"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                >
-                                    Team
-                                </a>
-
-                                <a
-                                    href="#"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                >
-                                    Projects
-                                </a>
-
-                                <a
-                                    href="#"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                >
-                                    Calendar
-                                </a>
-
-                                <a
-                                    href="#"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                >
-                                    Reports
-                                </a>
+                                <Link to="/about">
+                                    <a
+                                        href="#"
+                                        className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-semibold"
+                                    >
+                                        About
+                                    </a>
+                                </Link>
+                                <Link to="/explore">
+                                    <a
+                                        href="#"
+                                        className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-semibold"
+                                    >
+                                        Explore
+                                    </a>
+                                </Link>
+                                <Link to="/dashboard">
+                                    <a
+                                        href="#"
+                                        className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-semibold"
+                                    >
+                                        MyWork
+                                    </a>
+                                </Link>
+                                {!loginStatus &&
+                                    <Link to="/login">
+                                        <button class=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
+                                            Log In
+                                        </button>
+                                    </Link>
+                                }
+                                {loginStatus &&
+                                    <Link to="/">
+                                        <button class=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
+                                            Log Out
+                                        </button>
+                                    </Link>
+                                }
                             </div>
                         </div>
                     )}

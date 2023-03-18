@@ -46,7 +46,7 @@ const Register = () => {
                     <label htmlFor='passwordReg' className='mr-2'>Enter Password :</label>
                     <input type="text" className="rounded-xl box-border h-11 w-150 pl-2 mt-2" required id="passwordReg" name="passwordReg" placeholder='Password...' value={passwordReg} onChange={(e) => setPasswordReg(e.target.value)} />
                 </div>
-                <button type="submit" className="h-12 px-6 mt-3 text-lg bg-sky-500 rounded-lg hover:bg-sky-700" onClick={register}>Sign Up</button>
+                <button type="submit" className="h-12 px-6 mt-3 text-lg bg-black text-white rounded-lg hover:bg-sky-700 font-bold" onClick={register}>Sign Up</button>
             </form>
         </div>
 
