@@ -12,7 +12,7 @@ const Explore = () => {
             <div className='pt-12 pl-20 pr-20'>
                 <SearchBar setFilter={setFilter} />
             </div>
-            <div className='ml-20 pt-10 pb-20'>
+            <div className='ml-20 pt-10 pb-20 flex flex-wrap' >
                 {displayedData.map((id) => (
                     <ExploreCard key={id.id} comp_nam={id.comp_nam} name={id.nam} desc={id.desc} tag={id.tag} img={id.img} />
                 ))}
