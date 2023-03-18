@@ -5,7 +5,7 @@ import React from 'react'
 const ExploreCard = (props) => {
     return (
         <a href="#" class="block container mx-auto rounded-xl mt-5 w-96 max-w-sm pl-10 pr-10 pt-5 pb-5 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <div className='grid grid-cols-2 mr-20 pr-10'>
+            <div className='flex flex-col grid grid-cols-2 mr-20 pr-10'>
                 <div>
                     <img
                         className="h-20 w-20 rounded-full"
