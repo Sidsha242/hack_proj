@@ -6,6 +6,7 @@ import Home from './Pages/Home';
 import Navbar from './Components/Navbar';
 import Explore from './Pages/Explore';
 import About from './Pages/About';
+import NewBusiness from './Pages/NewBusiness';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route exact path='/dashboard' element={< Dashboard />}></Route>
         <Route exact path='/explore' element={< Explore />}></Route>
         <Route exact path='/about' element={< About />}></Route>
+        <Route exact path='/newbus' element={< NewBusiness />}></Route>
       </Routes>
     </div >
   </Router >

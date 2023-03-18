@@ -5,8 +5,11 @@ import img1 from "../Images/EmpowerHer.jpg";
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
+
+
 const Navbar = () => {
     const [loginStatus, setloginStatus] = useState(false);
+    const items = JSON.parse(localStorage.getItem('user'));
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div>
@@ -53,13 +56,6 @@ const Navbar = () => {
                                         <Link to="/login">
                                             <button class=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
                                                 Log In
-                                            </button>
-                                        </Link>
-                                    }
-                                    {loginStatus &&
-                                        <Link to="/">
-                                            <button class=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
-                                                Log Out
                                             </button>
                                         </Link>
                                     }

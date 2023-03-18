@@ -46,11 +46,6 @@ const Login = () => {
                                 window.location.href = 'http://localhost:3000/dashboard';
                             }, 1000)
                         }
-                        else if (role === 'admin') {
-                            setTimeout(() => {
-                                window.location.href = 'http://localhost:3000/admin';
-                            }, 1000)
-                        }
                     })
 
                 });
