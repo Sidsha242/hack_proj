@@ -1,6 +1,6 @@
 import React from "react";
-
-const business_form = ({ persons, setPersons,setMessage,setError}) => {
+import businesses from './business_db.json'
+const business_form = () => {
     const [newName, setNewName] = useState("");
     const [description, setDescription] = useState("");
     const [price,setPrice] = useState(0);
@@ -8,6 +8,16 @@ const business_form = ({ persons, setPersons,setMessage,setError}) => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
+          let randId = math.floor(math.random()  * 10000)
+          const newBusiness = {
+            id: randid,
+            name: newName,
+            description: description,
+            price: price,
+          }
+          let jsonString = json.stringify(newBusiness)
+          businesses.append(jsonString)
+
         }}
       >
         <div>
