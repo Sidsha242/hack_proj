@@ -3,6 +3,7 @@ import React from 'react'
 import Axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import img3 from "../Images/avatar-icon.png";
+import BusinessCard from '../Components/BusinessCard';
 
 const DashBoard = () => {
 
@@ -53,7 +54,24 @@ const DashBoard = () => {
 
 
 
-    function Dash(props) {
+    function Dash() {
+
+        const [bus_arr, set_bus_arr] = useState([]);
+
+        useEffect(() => {
+
+            console.log("inside useffect");
+
+            Axios.get(`http://localhost:3001/dashinfo/${username}`, {
+            }).then((response) => {
+                console.log("response received");
+                set_bus_arr(response.data);
+                console.log(response.data);
+
+            });
+
+        }, []);
+
         return (<>
             <div className='bg-[#F2EEDB] h-full  pt-10 pb-20 pr-20'>
                 <div className='log-out pl-10'>
@@ -79,17 +97,9 @@ const DashBoard = () => {
                         </button>
                     </Link >
                 </div>
-                <div className='container mt-5 pb-20 border-2 ml-10 mr-20 rounded-md border-black'>
-                    <div className='text-2xl text-black-800 font-bold mt-6 pl-10'>
-                        Business Name: Swetas Brownies
-                    </div>
-                    <div className='text-1xl text-black-800 font-semibold mt-6 pl-10'>
-                        Description: Amazing home made brownies.Flavours include nuts and extra fudge.
-                    </div>
-                    <div className='text-1xl text-black-800 font-semibold mt-6 pl-10'>
-                        Price Range: $3.
-                    </div>
-                </div>
+                {bus_arr.map((id) => (
+                    <BusinessCard key={id.id_business} bus_nam={id.bus_nam} desc={id.descrip} price={id.price} />
+                ))}
             </div>
         </>
         );

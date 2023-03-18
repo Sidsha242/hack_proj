@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
-import img1 from "../Images/EmpowerHer.jpg";
+import img1 from "../Images/logo-pic.png";
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
@@ -20,10 +20,10 @@ const Navbar = () => {
                             <div className="flex-shrink-0">
                                 <Link to="/">
                                     <img
-                                        className="h-8 w-42"
+                                        className='h-10 w-10 inline-block mb-2'
                                         src={img1}
-                                        alt="Workflow"
                                     />
+                                    <h1 className='text-4xl ml-2 font-bold text-red-500 inline-block'>EmpowHer</h1>
                                 </Link>
                             </div>
                             <div className="hidden md:block">
@@ -147,14 +147,14 @@ const Navbar = () => {
                                 </Link>
                                 {!loginStatus &&
                                     <Link to="/login">
-                                        <button class=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
+                                        <button className=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
                                             Log In
                                         </button>
                                     </Link>
                                 }
                                 {loginStatus &&
                                     <Link to="/">
-                                        <button class=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
+                                        <button className=" bg-[#FF0000] hover:bg-red-200 text-white font-bold py-2 px-4 rounded">
                                             Log Out
                                         </button>
                                     </Link>

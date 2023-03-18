@@ -45,7 +45,7 @@ const data = [
         "nam": "Pulkit",
         "desc": "Amazing home grown flowers. Fresh and fragrant. ",
         "phone_num": 9372155822,
-        "tag": ["Brownies", "Good Quality"],
+        "tag": ["Flowers", "Roses"],
         "img": img3,
     },
     {

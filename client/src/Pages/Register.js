@@ -37,27 +37,29 @@ const Register = () => {
     }
 
     return (<>
-        <div className="registration text-center container mx-auto bg-[#F2EEDB] rounded-xl shadow border p-6 m-6">
-            <h1 className="text-3xl text-gray-700 font-bold mb-5">SignUp</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor='usernameReg' className='mr-2'>Enter Username :</label>
-                    <input type="text" className="rounded-xl box-border h-11 w-150 pl-2 mt-2" required id="usernameReg" name="usernameReg" placeholder='Username...' value={usernameReg} onChange={(e) => setUsernameReg(e.target.value)} />
-                </div>
-                <div>
-                    <label htmlFor='passwordReg' className='mr-2'>Enter Password :</label>
-                    <input type="text" className="rounded-xl box-border h-11 w-150 pl-2 mt-2" required id="passwordReg" name="passwordReg" placeholder='Password...' value={passwordReg} onChange={(e) => setPasswordReg(e.target.value)} />
-                </div>
-                <div>
-                    <label htmlFor='phonenumReg' className='mr-2'>Enter Phone Number :</label>
-                    <input type="text" className="rounded-xl box-border h-11 w-150 pl-2 mt-2" required id="phonenumReg" name="phonenumReg" placeholder='Phone number...' value={phonenumReg} onChange={(e) => setPhonenumReg(e.target.value)} />
-                </div>
-                <button type="submit" className="h-12 px-6 mt-3 text-lg bg-black text-white rounded-lg hover:bg-sky-700 font-bold" onClick={register}>Sign Up</button>
-            </form>
-        </div>
+        <div className='bg-[#F2EEDB] h-screen'>
+            <div className="registration text-center container mx-auto bg-[#F2EEDB] rounded-xl shadow border p-6">
+                <h1 className="text-3xl text-gray-700 font-bold mb-5">SignUp</h1>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor='usernameReg' className='block mb-3 items-start font-bold mt-2'>Enter Username :</label>
+                        <input type="text" className="rounded-xl box-border h-11 w-150 pl-2" required id="usernameReg" name="usernameReg" placeholder='Username...' value={usernameReg} onChange={(e) => setUsernameReg(e.target.value)} />
+                    </div>
+                    <div>
+                        <label htmlFor='passwordReg' className='block mb-3 items-start font-bold mt-2'>Enter Password :</label>
+                        <input type="text" className="rounded-xl box-border h-11 w-150 pl-2 " required id="passwordReg" name="passwordReg" placeholder='Password...' value={passwordReg} onChange={(e) => setPasswordReg(e.target.value)} />
+                    </div>
+                    <div>
+                        <label htmlFor='phonenumReg' className='block mb-3 items-start font-bold mt-2'>Enter Phone Number :</label>
+                        <input type="text" className="rounded-xl box-border h-11 w-150 pl-2" required id="phonenumReg" name="phonenumReg" placeholder='Phone number...' value={phonenumReg} onChange={(e) => setPhonenumReg(e.target.value)} />
+                    </div>
+                    <button type="submit" className="h-12 px-6 mt-3 text-lg bg-black text-white rounded-lg hover:bg-sky-700 font-bold" onClick={register}>Sign Up</button>
+                </form>
+            </div>
 
-        <p className="text-2xl text-black-600 font-bold mt-6">{registerMessage}</p>
-        <hr></hr>
+            <p className="text-2xl text-black-600 font-bold mt-6">{registerMessage}</p>
+            <hr></hr>
+        </div>
     </>
     )
 }

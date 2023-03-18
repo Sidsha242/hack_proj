@@ -185,6 +185,44 @@ app.post("/newbus", (req, res) => {
 
 })
 
+app.get("/dashinfo/:id", async (req, res) => {
+
+    const id = req.params.id;
+
+    console.log(id);
+
+    db.query(
+        `SELECT * FROM user_business where user_nam='${id}';`,
+        (err, result) => {
+            if (!err) {
+                console.log(result);
+                res.send(result);
+            }
+            else {
+                console.log(err);
+            }
+        })
+}
+);
+
+
+app.get("/exploreinfo", async (req, res) => {
+
+    db.query(
+        `SELECT * FROM user_business;`,
+        (err, result) => {
+            if (!err) {
+                console.log(result);
+                res.send(result);
+            }
+            else {
+                console.log(err);
+            }
+        })
+
+})
+
+
 
 
 app.listen(3001, () => {

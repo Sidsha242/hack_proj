@@ -44,7 +44,7 @@ const NewBusiness = () => {
 
 
     return (
-        <div className="login text-center container mx-auto bg-[#F2EEDB] p-6">
+        <div className="login text-center container mx-auto bg-[#F2EEDB] h-screen p-6">
             <h1 className="text-3xl text-gray-700 font-bold mb-5">New Business</h1>
             <form onSubmit={handleSubmit}>
                 <div>
