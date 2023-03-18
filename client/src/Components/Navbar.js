@@ -30,7 +30,7 @@ const Navbar = () => {
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     <Link to="/about">
                                         <a
-                                            href="#"
+                                            href="/about"
                                             className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-semibold"
                                         >
                                             About
@@ -38,7 +38,7 @@ const Navbar = () => {
                                     </Link>
                                     <Link to="/explore">
                                         <a
-                                            href="#"
+                                            href="/explore"
                                             className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-semibold"
                                         >
                                             Explore
@@ -46,7 +46,7 @@ const Navbar = () => {
                                     </Link>
                                     <Link to="/dashboard">
                                         <a
-                                            href="#"
+                                            href="/dashboard"
                                             className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-semibold"
                                         >
                                             MyWork

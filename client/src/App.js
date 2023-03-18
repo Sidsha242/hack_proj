@@ -7,8 +7,18 @@ import Navbar from './Components/Navbar';
 import Explore from './Pages/Explore';
 import About from './Pages/About';
 import NewBusiness from './Pages/NewBusiness';
+import {useState} from 'react'
+import Protected from './Components/Protected.js'
 
 function App() {
+
+  const [isSignedIn, setIsSignedIn] = useState(null)
+  const signin = () => {
+    setIsSignedIn(true)
+  }
+  const signout = () => {
+    setIsSignedIn(false)
+  }
 
   return (<Router>
     <div className="App">
@@ -17,10 +27,10 @@ function App() {
         <Route exact path='/' element={< Home />}></Route>
         <Route exact path='/login' element={< Login />}></Route>
         <Route exact path='/register' element={< Register />}></Route>
-        <Route exact path='/dashboard' element={< Dashboard />}></Route>
+        <Route exact path='/dashboard' element={<Protected isSignedIn={isSignedIn}> <Dashboard /> </Protected>}></Route>
         <Route exact path='/explore' element={< Explore />}></Route>
         <Route exact path='/about' element={< About />}></Route>
-        <Route exact path='/newbus' element={< NewBusiness />}></Route>
+        <Route exact path='/newbus' element={<Protected isSignedIn={isSignedIn}> <NewBusiness /> </Protected>}></Route>
       </Routes>
     </div >
   </Router >
