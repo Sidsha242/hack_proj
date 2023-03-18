@@ -9,7 +9,8 @@ module.exports = {
     "./src/Components/ExploreCard.js",
     "./src/Pages/Explore.js",
     "./src/Components/SearchBar.js",
-    "./src/Pages/About.js"
+    "./src/Pages/About.js",
+    "./src/Pages/NewBusiness.js"
   ],
   theme: {
     extend: {

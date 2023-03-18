@@ -39,15 +39,9 @@ const Login = () => {
                     },
                 }).then((response) => {
                     console.log("Auth suc");
-                    Axios.get("http://localhost:3001/role").then((response) => {
-                        setRole(response.data.user[0].role);
-                        if (role === 'user') {
-                            setTimeout(() => {
-                                window.location.href = 'http://localhost:3000/dashboard';
-                            }, 1000)
-                        }
-                    })
-
+                    setTimeout(() => {
+                        window.location.href = 'http://localhost:3000/dashboard';
+                    }, 1000)
                 });
 
 

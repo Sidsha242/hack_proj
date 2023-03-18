@@ -58,6 +58,8 @@ const db = mysql.createConnection({
 app.post("/register", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;   //receiving value from back
+    const phone_num = req.body.phonenum;
+
 
 
     bcrypt.hash(password, saltRounds, (err, hash) => {
@@ -66,14 +68,14 @@ app.post("/register", (req, res) => {
             console.log(err);
         }
         db.query(
-            "INSERT INTO login_system_users (username, password) VALUES (?,?)",
-            [username, hash],
+            "INSERT INTO login_system_users (username, password,phone_num) VALUES (?,?,?)",
+            [username, hash, phone_num],
             (err, result) => {
                 if (!err) {
                     res.send("SignUp successful");
                 }
                 else if (err.code === 'ER_DUP_ENTRY') {
-                    res.send("Username already taken");
+                    res.send("Username already taken/Invalid Phone number");
                     // console.log(err);
                 }
             }
@@ -89,11 +91,6 @@ app.get("/login", (req, res) => {
     else {
         res.send({ loggedIn: false })
     }
-})
-
-
-app.get("/role", (req, res) => {
-    res.send({ user: req.session.user });
 })
 
 
@@ -162,6 +159,29 @@ app.get('/isUserAuth', verifyJWT, (req, res) => {    //verifyJWT is a middleware
 
     res.send("User Authenticated");
     console.log(req.body.username);
+
+})
+
+app.post("/newbus", (req, res) => {
+    const busname = req.body.busname;
+    const username = req.body.username;   //receiving value from back
+    const descrip = req.body.desc;
+    const price = req.body.price;
+
+    db.query(
+        `INSERT INTO user_business (bus_nam,user_nam,descrip,price) VALUES ('${busname}','${username}','${descrip}','${price}');`,
+        (err, result) => {
+            if (!err) {
+                console.log("Business Added");
+                res.send("Business Added!");
+            }
+            else {
+
+                console.log(err);
+            }
+        }
+    );
+
 
 })
 

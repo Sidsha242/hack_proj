@@ -19,7 +19,6 @@ const DashBoard = () => {
     }
 
 
-
     useEffect(() => {
         console.log("Dash");
         const items = JSON.parse(localStorage.getItem('user'));
@@ -52,6 +51,8 @@ const DashBoard = () => {
         );
     }
 
+
+
     function Dash(props) {
         return (<>
             <div className='bg-[#F2EEDB] h-full  pt-10 pb-20 pr-20'>
@@ -69,7 +70,7 @@ const DashBoard = () => {
                     <p className="text-6xl text-black-800 font-bold mt-6">Hi {username}!</p>
                 </div>
                 <div className='text-4xl text-black-800 font-bold mt-6 pl-10'>
-                    My Shops:
+                    My Business:
                 </div>
                 <div className='add-busin pl-10 mt-6'>
                     < Link to="/newbus" >
@@ -80,7 +81,13 @@ const DashBoard = () => {
                 </div>
                 <div className='container mt-5 pb-20 border-2 ml-10 mr-20 rounded-md border-black'>
                     <div className='text-2xl text-black-800 font-bold mt-6 pl-10'>
-                        Shop Name:
+                        Business Name: Swetas Brownies
+                    </div>
+                    <div className='text-1xl text-black-800 font-semibold mt-6 pl-10'>
+                        Description: Amazing home made brownies.Flavours include nuts and extra fudge.
+                    </div>
+                    <div className='text-1xl text-black-800 font-semibold mt-6 pl-10'>
+                        Price Range: $3.
                     </div>
                 </div>
             </div>

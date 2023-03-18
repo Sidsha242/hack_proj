@@ -30,6 +30,16 @@ const data = [
         "tag": ["Audio Book", "Experienced"],
         "img": img3,
     },
+    {
+        "id": "4",
+        "comp_nam": "Swetas Brownies",
+        "nam": "Sweta",
+        "desc": "Amazing home made brownies.Flavours include nuts and extra fudge.",
+        "phone_num": 9372155822,
+        "tag": ["Brownies", "Good Quality"],
+        "img": img3,
+    },
 ]
+
 
 export default data

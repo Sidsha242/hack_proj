@@ -14,6 +14,7 @@ const Register = () => {
         Axios.post('http://localhost:3001/register', {
             username: usernameReg,                              //sending to backend
             password: passwordReg,
+            phonenum: phonenumReg,
 
         }).then((response) => {
             if (response.data === 'Username already taken') {
